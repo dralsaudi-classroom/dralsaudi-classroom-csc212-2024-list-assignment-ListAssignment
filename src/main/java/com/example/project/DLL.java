@@ -84,7 +84,7 @@ public class DLL<T> {
 
 if (exsists1 == exsists2 == true){
 	current = head;
-	e1.next = e2;
+	e1.next = e2.previous;
 }else
 	return;
 		    
