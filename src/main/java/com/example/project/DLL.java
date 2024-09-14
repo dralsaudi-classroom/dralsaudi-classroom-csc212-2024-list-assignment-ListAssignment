@@ -70,9 +70,9 @@ public class DLL<T> {
 	   
 
 	    do{
-		if(current.data == e1)
+		if(current.data.equals(e1))
 			exsists1 = true;
-		if (current.data == e2 && exsists1){
+		if (current.data.equals(e2) && exsists1){
 			exsists2 = true;
 		    break;
 	    }
@@ -80,11 +80,13 @@ public class DLL<T> {
 		 current = current.next;   
 
 		    
-	    }while(current.next != null)
+	    }while(current != null)
 
 if (exsists1 == exsists2 == true){
+	
+	e1.next = e2;
+	e2.previous = e1;
 	current = head;
-	e1.next = e2.previous;
 }else
 	return;
 		    
