@@ -70,9 +70,9 @@ public class DLL<T> {
 	   
 
 	    do{
-		if(current == e1)
+		if(current.data == e1)
 			exsists1 = true;
-		if (current == e2 && exsists1){
+		if (current.data == e2 && exsists1){
 			exsists2 = true;
 		    break;
 	    }
