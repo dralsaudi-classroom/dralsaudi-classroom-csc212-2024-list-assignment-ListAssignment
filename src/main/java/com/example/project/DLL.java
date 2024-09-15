@@ -65,58 +65,36 @@ public class DLL<T> {
             current = current.next;
     }
 	
-   public void removeBetween(T e1, T e2) {
-    boolean exists1 = false;
-    boolean exists2 = false;
-
-    // Start at the head of the list
-    DLLNode<T> current = head;
-    DLLNode<T> runner = null;  // This will point to the node e1 when found
-
-    // First, find e1 and e2, and ensure e1 comes before e2
-    while (current != null) {
-        if (current.data.equals(e1)) {
-            exists1 = true;
-            runner = current; // runner will point to e1
-        }
-        if (current.data.equals(e2) && exists1) {
-            exists2 = true;
-            break;  // Stop once we find e2 after e1
-        }
-        current = current.next;
-    }
-
-    // If both e1 and e2 are found and e1 comes before e2
-    if (exists1 && exists2) {
-        // Set current to the node after e1 (runner.next)
-        current = runner.next;
-
-        // Remove all nodes between e1 and e2 (not inclusive)
-        while (current != null && !current.data.equals(e2)) {
-            // Disconnect current from the list
-            DLLNode<T> temp = current;
-            current = current.next;
-
-            // Update previous and next pointers of adjacent nodes
-            if (temp.previous != null) {
-                temp.previous.next = temp.next;
+ public void removeBetween(T e1, T e2) {
+       
+        DLLNode<T> runner = head;
+        DLLNode<T> node1 = null;
+        DLLNode<T> node2 = null;
+        boolean exists1 = false;
+        boolean exists2 = false;
+        
+        while (runner!=null) {
+        	
+            if (runner.data.equals(e1)) {
+            	node1 = runner;
+                exists1 = true;
             }
-            if (temp.next != null) {
-                temp.next.previous = temp.previous;
+            else if (runner.data.equals(e2)) {
+            	node2 = runner;
+                exists2 = true;
+                
+                break;
             }
+            runner = runner.next;
         }
 
-        // Connect e1 (runner) to e2
-        runner.next = current;  // runner is e1, current is e2
-        if (current != null) {
-            current.previous = runner;
+        if (exists1 && exists2) {
+        	node1.next = node2;
+        	node2.previous = node1;
+            current = head; 
         }
-
-        // Move current back to the head
-        current = head;
-    }
-}
 		    
+        //throw new UnsupportedOperationException("Not supported yet.");
         // throw new UnsupportedOperationException("Not supported yet.");
         // Write the method removeBetween, member of the class DoubleLinkedList. The method
         // takes two elements e1 and e2, and removes all the elements between the two elements
@@ -126,4 +104,7 @@ public class DLL<T> {
         // is: public void removeBetween(T e1, T e2).
         // Example 3.1. Given the list: A ↔ B ↔ C ↔ D ↔ E ↔ F, removeBetween(’B’,
         // ’E’) results in: A ↔ B ↔ E ↔ F.
+    }
+		    
+
     }
