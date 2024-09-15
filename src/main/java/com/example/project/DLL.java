@@ -64,14 +64,17 @@ public class DLL<T> {
         else
             current = current.next;
     }
-    public void removeBetween(T e1, T e2) {
+	
+      public void removeBetween(T e1, T e2) {
 	    boolean exsists1 = false;
 	     boolean exsists2 = false;
-	   
+	     current = head;
+	     DLLNode<T> runner;
 
 	    do{
 		if(current.data.equals(e1))
 			exsists1 = true;
+		    runner = current;
 		if (current.data.equals(e2) && exsists1){
 			exsists2 = true;
 		    break;
@@ -80,12 +83,13 @@ public class DLL<T> {
 		 current = current.next;   
 
 		    
-	    }while(current != null)
+	    }while(current != null);
 
 if (exsists1 == exsists2 == true){
 	
-	e1.next = e2;
-	e2.previous = e1;
+	runner.next = current;
+	current.previous = runner;
+	
 	current = head;
 }else
 	return;
@@ -104,4 +108,3 @@ if (exsists1 == exsists2 == true){
         // Example 3.1. Given the list: A ↔ B ↔ C ↔ D ↔ E ↔ F, removeBetween(’B’,
         // ’E’) results in: A ↔ B ↔ E ↔ F.
     }
-}
