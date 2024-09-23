@@ -7,6 +7,24 @@ public class ListTester {
         // List list and an integer n > 0 and performs n circular left shift of the list.
         // Example 2.1. Given the list l : A, B, C, D, E, circularShiftLeft(l, 1) results in
         // B, C, D, E, A, circularShiftLeft(l, 2) results in C, D, E, A, B.
+    	int size=1;
+    	list.findFirst();
+    	while(!list.last()) {
+    		list.findNext();
+    		size++;
+    	}
+    	list.findFirst();
+        T[] arr=(T[])new Object[size];
+        for(int i=0;i<size;i++) {
+        	arr[i]=list.retrieve();
+        	list.findNext();
+        }
+        list.findFirst();
+    	for(int i=0;i<size;i++) {
+    		list.update(arr[(i+n)%size]);
+    		list.findNext();
+    	}
+    		
     	
         
     }
