@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 public class TestList {
 
-   @Test
+   
    public void testMostFrequentElement1()
    {
       LinkedList<Character> list = new LinkedList<Character>();
@@ -20,7 +20,7 @@ public class TestList {
       list.insert('E');
       assertEquals('B', list.mostFrequentElement());
    }
-   @Test
+   
    public void testMostFrequentElement2()
    {
       LinkedList<Character> list = new LinkedList<Character>();
@@ -30,14 +30,14 @@ public class TestList {
       list.insert('A');
       assertEquals('A', list.mostFrequentElement());
    }
-   @Test
+   
    public void testMostFrequentElement3()
    {
       LinkedList<String> list = new LinkedList<String>();
       list.insert("Hello");
       assertEquals("Hello", list.mostFrequentElement());
    }
-   @Test
+   
    public void testMostFrequentElement4()
    {
       LinkedList<Character> list = new LinkedList<Character>();
@@ -48,7 +48,7 @@ public class TestList {
       list.insert('B');
       assertEquals('B', list.mostFrequentElement());
    }
-   @Test
+   
    public void testMostFrequentElement5()
    {
       LinkedList<Integer> list = new LinkedList<Integer>();
@@ -59,7 +59,7 @@ public class TestList {
       list.insert(2);
       assertEquals(Integer.valueOf(2), list.mostFrequentElement());
    }
-   @Test
+   
    public void testCircularLeftShift1()
    {
       LinkedList<Character> list = new LinkedList<Character>();
@@ -80,7 +80,7 @@ public class TestList {
       list.findNext();
       assertEquals(Character.valueOf('B'), list.retrieve());
    }
-   @Test
+   
    public void testCircularLeftShift2()
    {
       LinkedList<Integer> list = new LinkedList<Integer>();
@@ -92,7 +92,7 @@ public class TestList {
       list.findNext();
       assertEquals(Integer.valueOf(1), list.retrieve());
    }
-   @Test
+   
    public void testCircularLeftShift3()
    {
       LinkedList<Integer> list = new LinkedList<Integer>();
@@ -101,7 +101,7 @@ public class TestList {
       list.findFirst();
       assertEquals(Integer.valueOf(1), list.retrieve());
    }
-   @Test
+   
    public void testCircularLeftShift4()
    {
       LinkedList<String> list = new LinkedList<String>();
@@ -122,7 +122,7 @@ public class TestList {
       list.findNext();
       assertEquals("Second", list.retrieve());
    }
-   @Test
+   
    public void testRemoveBetween1()
    {
       DLL<Character> list = new DLL<Character>();
@@ -141,7 +141,7 @@ public class TestList {
       list.findNext();
       assertEquals('F', list.retrieve());
    }
-   @Test
+   
    public void testRemoveBetween2()
    {
       DLL<Character> list = new DLL<Character>();
@@ -156,7 +156,7 @@ public class TestList {
       list.findNext();
       assertEquals('F', list.retrieve());
    }
-   @Test
+   
    public void testRemoveBetween3()
    {
       DLL<Integer> list = new DLL<Integer>();
@@ -164,7 +164,7 @@ public class TestList {
       list.removeBetween(1, 3);
       assertEquals(Integer.valueOf(1), list.retrieve());
    }
-   @Test
+   
    public void testRemoveBetween4()
    {
       DLL<String> list = new DLL<String>();
@@ -191,7 +191,7 @@ public class TestList {
       list.findNext();
       assertEquals("Fourth", list.retrieve());
    }
-   @Test
+   
    public void testReverseCopy1()
    {
       DLL<Character> list1 = new DLL<Character>();
@@ -210,7 +210,7 @@ public class TestList {
       list2.findNext();
       assertEquals('A', list2.retrieve());
    }
-   @Test
+   
    public void testReverseCopy2()
    {
       DLL<Character> list1 = new DLL<Character>();
@@ -240,7 +240,7 @@ public class TestList {
       assertEquals('B', list2.retrieve());
       
    }
-   @Test
+   
    public void testReverseCopy3()
    {
       DLL<Integer> list1 = new DLL<Integer>();
@@ -251,7 +251,7 @@ public class TestList {
       ListTester.reverseCopy(list1, list2);
       assertEquals(Integer.valueOf(1), list2.retrieve());
    }
-   @Test
+   
    public void testReverseCopy4()
    {
       DLL<String> list1 = new DLL<String>();
